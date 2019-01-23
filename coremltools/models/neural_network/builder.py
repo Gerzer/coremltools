@@ -1643,7 +1643,10 @@ class NeuralNetworkBuilder(object):
         weight_params = spec_layer_params.weightParams
 
         # set the parameters
-        spec_layer_params.inputVectorSize = input_size
+	try:
+        	spec_layer_params.inputVectorSize = input_size
+	except:
+		spec_layer_params.inputVectorSize = input_size[1]
         spec_layer_params.outputVectorSize = hidden_size
         params.sequenceOutput = output_all
         params.forgetBias = False
