@@ -675,7 +675,7 @@ class NetGraph(object):
             layer = self.layer_list[idx]
             keras_layer = self.keras_layer_map[layer]
             predecessors = self.reverse_edge_map[layer]
-            successors = self.edge_map[layer]
+            successors = self.edge_map.get(layer, [])
             new_layers = [layer+'_'+str(i) for i in range(len(predecessors))]
             self.layer_list[idx:idx+1] = new_layers
             for i, new_layer in enumerate(new_layers):
