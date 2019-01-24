@@ -270,7 +270,8 @@ class NetGraph(object):
             old_blob_name = '_output'
             new_blob_name = new_names[i]
             succs = self.get_successors(in_layer)
-            for succ in succs: 
+            for succ in succs:
+                print(self.layers_inputs[succ])
                 idx = self.layers_inputs[succ].index(old_blob_name)
                 self.layers_inputs[succ][idx] = new_blob_name
 
