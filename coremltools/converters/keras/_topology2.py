@@ -267,7 +267,10 @@ class NetGraph(object):
             return
         for i, in_layer in enumerate(self.input_layers):
 #             old_blob_name = in_layer + '_output'
-            old_blob_name = '_output'
+            try:
+                old_blob_name = in_layer + '_output'
+            except:
+                old_blob_name = 'input_2_output'
             new_blob_name = new_names[i]
             succs = self.get_successors(in_layer)
             for succ in succs:
