@@ -266,7 +266,8 @@ class NetGraph(object):
             print('Input name length mismatch')
             return
         for i, in_layer in enumerate(self.input_layers):
-            old_blob_name = in_layer + '_output'
+#             old_blob_name = in_layer + '_output'
+            old_blob_name = '_output'
             new_blob_name = new_names[i]
             succs = self.get_successors(in_layer)
             for succ in succs: 
