@@ -1059,7 +1059,8 @@ def convert_gru(builder, layer, input_names, output_names, keras_layer):
     """
 
     hidden_size = keras_layer.units
-    input_size = keras_layer.input_shape[-1]
+#     input_size = keras_layer.input_shape[-1]
+    input_size = keras_layer.input_dim
 
     output_all = keras_layer.return_sequences
     reverse_input = keras_layer.go_backwards
