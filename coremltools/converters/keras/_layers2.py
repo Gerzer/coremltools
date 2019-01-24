@@ -11,7 +11,8 @@ elif _keras.__version__ >= _StrictVersion('2.2.0'):
     from keras.layers import DepthwiseConv2D
     from keras_applications.mobilenet import relu6
 else:
-    from keras.applications.mobilenet import DepthwiseConv2D, relu6
+#     from keras.applications.mobilenet import DepthwiseConv2D, relu6
+    from keras.applications.MobileNet import DepthwiseConv2D, relu6
 
 def _get_recurrent_activation_name_from_keras(activation):
     if activation == _keras.activations.sigmoid:
@@ -1060,11 +1061,11 @@ def convert_gru(builder, layer, input_names, output_names, keras_layer):
 
     hidden_size = keras_layer.units
     print(keras_layer.input_shape)
-#     input_size = keras_layer.input_shape[-1]
-    try:
-        input_size = keras_layer.input_shape[0][-1]
-    except:
-        input_size = keras_layer.input_shape[-1]
+    input_size = keras_layer.input_shape[-1]
+#     try:
+#         input_size = keras_layer.input_shape[0][-1]
+#     except:
+#         input_size = keras_layer.input_shape[-1]
 
     output_all = keras_layer.return_sequences
     reverse_input = keras_layer.go_backwards
