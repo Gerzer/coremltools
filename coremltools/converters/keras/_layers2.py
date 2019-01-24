@@ -10,9 +10,8 @@ if _keras.__version__ >= _StrictVersion('2.2.1'):
 elif _keras.__version__ >= _StrictVersion('2.2.0'):
     from keras.layers import DepthwiseConv2D
     from keras_applications.mobilenet import relu6
-else:
+# else:
 #     from keras.applications.mobilenet import DepthwiseConv2D, relu6
-    from keras.applications.MobileNet import DepthwiseConv2D, relu6
 
 def _get_recurrent_activation_name_from_keras(activation):
     if activation == _keras.activations.sigmoid:
