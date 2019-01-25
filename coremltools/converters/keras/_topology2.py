@@ -265,6 +265,7 @@ class NetGraph(object):
         if len(new_names) != len(self.input_layers): 
             print('Input name length mismatch')
             return
+        print(type(input_layer))
         for i, in_layer in enumerate(self.input_layers):
 #             old_blob_name = in_layer + '_output'
             try:
