@@ -259,25 +259,26 @@ class NetGraph(object):
             return input_blobs, output_blobs
     
     def reset_model_input_names(self, new_names):
-        # call this method after make_input_layers() is called
-        if new_names is None: 
-            return
-        if len(new_names) != len(self.input_layers): 
-            print('Input name length mismatch')
-            return
-        print(type(self.input_layers[0]))
-        for i, in_layer in enumerate(self.input_layers):
-#             old_blob_name = in_layer + '_output'
-            try:
-                old_blob_name = in_layer + '_output'
-            except:
-                old_blob_name = 'input_2_output'
-            new_blob_name = new_names[i]
-            succs = self.get_successors(in_layer)
-            for succ in succs:
-                print(self.layers_inputs[succ])
-                idx = self.layers_inputs[succ].index(old_blob_name)
-                self.layers_inputs[succ][idx] = new_blob_name
+        pass
+#         # call this method after make_input_layers() is called
+#         if new_names is None: 
+#             return
+#         if len(new_names) != len(self.input_layers): 
+#             print('Input name length mismatch')
+#             return
+#         print(type(self.input_layers[0]))
+#         for i, in_layer in enumerate(self.input_layers):
+# #             old_blob_name = in_layer + '_output'
+#             try:
+#                 old_blob_name = in_layer + '_output'
+#             except:
+#                 old_blob_name = 'input_2_output'
+#             new_blob_name = new_names[i]
+#             succs = self.get_successors(in_layer)
+#             for succ in succs:
+#                 print(self.layers_inputs[succ])
+#                 idx = self.layers_inputs[succ].index(old_blob_name)
+#                 self.layers_inputs[succ][idx] = new_blob_name
 
     def reset_model_output_names(self, new_names):
         if new_names is None: 
