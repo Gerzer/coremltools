@@ -281,15 +281,16 @@ class NetGraph(object):
 #                 self.layers_inputs[succ][idx] = new_blob_name
 
     def reset_model_output_names(self, new_names):
-        if new_names is None: 
-            return
-        if len(new_names) != len(self.output_layers): 
-            print('Output name length mismatch')
-            return
-        for i, out_layer in enumerate(self.output_layers):
-            old_blob_name = self.layers_outputs[self.output_layers[i]][0]
-            self._replace_blob_name(old_blob_name, 
-                    new_names[i])
+        pass
+#         if new_names is None: 
+#             return
+#         if len(new_names) != len(self.output_layers): 
+#             print('Output name length mismatch')
+#             return
+#         for i, out_layer in enumerate(self.output_layers):
+#             old_blob_name = self.layers_outputs[self.output_layers[i]][0]
+#             self._replace_blob_name(old_blob_name, 
+#                     new_names[i])
 
     # need to update both layer's in/out list and graph in/out ports
     def add_recurrent_optionals(self):
