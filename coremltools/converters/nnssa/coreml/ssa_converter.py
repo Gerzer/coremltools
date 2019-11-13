@@ -855,6 +855,8 @@ class SSAConverter(object):
         else:
             array_size = None
 
+        print("Array size: ", array_size)
+        print("Has static element shape: ", has_static_element_shape)
         # Simpler case: No dynamic shape
         if array_size is not None and has_static_element_shape:
             array_shape = [array_size] + list(element_shape)
