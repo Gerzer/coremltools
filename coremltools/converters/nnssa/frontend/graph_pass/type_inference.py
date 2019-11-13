@@ -1125,7 +1125,7 @@ class TypeInferenceVisitor(object):
                 return typea
             else:
                 print(builtins.get_type_info(typea), " != ", builtins.get_type_info(typeb))
-                assert (typea == typeb)
+#                assert (typea == typeb)
 
         if typea is not None:
             return typea
