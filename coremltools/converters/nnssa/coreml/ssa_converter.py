@@ -1743,7 +1743,7 @@ class SSAConverter(object):
         print(input_types)
 
 #        try:
-        reps = input_nodes[1].val
+        reps = input_nodes[1].value.val
 #        except AttributeError:
 #            reps = 57
         layer = self._get_builder().add_tile(
