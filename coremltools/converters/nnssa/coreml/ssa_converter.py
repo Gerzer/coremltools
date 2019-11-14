@@ -1738,6 +1738,9 @@ class SSAConverter(object):
     def _convert_tile(self, node):
         assert len(node.inputs) == 2
         input_nodes, input_names, input_types = self._get_input_tensors(node)
+        print(input_nodes)
+        print(input_names)
+        print(input_types)
 
         reps = input_nodes[1].value.val
         layer = self._get_builder().add_tile(
