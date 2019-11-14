@@ -1743,6 +1743,7 @@ class SSAConverter(object):
         print(input_types)
 
 #        try:
+        print(input_nodes[1].attr)
         reps = input_nodes[1].value.val
 #        except AttributeError:
 #            reps = 57
