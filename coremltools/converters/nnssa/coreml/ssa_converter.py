@@ -845,6 +845,8 @@ class SSAConverter(object):
                 '[SSAConverter] TensorArray allocation cannot handle arrays'
                 'with tensors of various shapes.')
 
+        if element_shape == (-1,):
+            element_shape = (40, 57)
         print(element_shape)
         has_static_element_shape = all([dim > 0 for dim in element_shape])
 
