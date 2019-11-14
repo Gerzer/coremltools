@@ -1742,10 +1742,10 @@ class SSAConverter(object):
         print(input_names)
         print(input_types)
 
-        try:
-            reps = input_nodes[1].value.val
-        except AttributeError:
-            reps = 57
+#        try:
+            reps = input_nodes[1].val
+#        except AttributeError:
+#            reps = 57
         layer = self._get_builder().add_tile(
             name=node.name,
             input_name=input_names[0],
